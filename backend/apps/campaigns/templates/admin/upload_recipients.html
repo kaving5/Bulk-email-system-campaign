@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <h2>Upload Recipients for Campaign: {{ campaign.name }}</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="csv_file" accept=".csv" required>
+    <br><br>
+    <button type="submit" class="button default">Upload</button>
+  </form>
+{% endblock %}
